@@ -2,7 +2,7 @@
 
 Generate a heat map calendar using gnuplot and a CSV file with events.
 
-![A heat map calendar](calendar.png)
+![A heat map calendar](calendar.png?)
 
 **This calendar displays the frequency of events in a day**: the more events, the brightest is the green. Algorithmically, this program (via `awk`) gets the day with more events and counts them to have the highest value (for internal reference): which represents the 100%. Then, it counts the events of every day and assigns a color according to the corresponding percentage. There are **four** colors for four frequencies.
 
