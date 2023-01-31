@@ -26,15 +26,15 @@ set lmargin 7
 Month(t)        = int(tm_year(t)*12 + tm_mon(t))
 MonthLabel(t,y) = strftime( y=0 ? '%b %Y' : '%b', t)
 WeekDay(t)      = strftime('%a',t)[1:1]
-DayColor(t)     = tm_wday(t) == 0 ? 0x682424 : tm_wday(t) == 6 ? 0x244444 : 0x242628
+DayColor(t)     = tm_wday(t) == 0 ? 0x772222 : tm_wday(t) == 6 ? 0x222277 : 0x242628
 MonthFirst(t)   = int(strptime('%Y%m%d',sprintf('%04d%02d01',tm_year(t),tm_mon(t)+1)))
 MonthOffset(t)  = tm_wday(MonthFirst(t))==0 ? 7 : tm_wday(MonthFirst(t))
 set xrange[*:*]
 
 Max=`awk -F, 'FNR>1{print $1}' 'data.csv' | uniq -c | awk -v OFS=',' '$1>1{print $1}' | sort -g | tail -n 1`
-Lv1 = Max / 4 * 1
-Lv2 = Max / 4 * 2
-Lv3 = Max / 4 * 3
+Lv1 = Max / 4.0 * 1
+Lv2 = Max / 4.0 * 2
+Lv3 = Max / 4.0 * 3
 
 # Color 1 -> $1>0   && $1<=Lv1
 # Color 2 -> $1>Lv1 && $1<=Lv2
